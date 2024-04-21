@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- style -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- vue.js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <title>TOBOOLIST</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- header -->
+        <header>
+            <div class="header-conteiner">
+                <img src="./img/logo.png" alt="logo-toboolist">
+            </div>
+        </header>
+        <!-- /header -->
+        <!-- main -->
+        <main class="main-conteiner">
+            <!-- search-box -->
+            <div class="search-conteiner">
+                <input class="search-box" type="text" placeholder="es. fare la spesa" v-model="newToDo.text">
+                <button class="botton-task" @click="addToDo">Add. Task</button>
+            </div>
+            <!-- /search-box -->
+            <hr>
+            <!--list -->
+            <ul class="task-list">
+                <li><strong>&#10148; TASK PRECEDENTI</strong></li>
+                <li class="task-conteiner" v-for="curToDo in toDo">
+                    <span class="check ">&check;</span>
+                    <span :class="curToDo.done" > {{ curToDo.text }} </span>
+                    <span class="tag blu">Editorial</span>
+                </li>
+            </ul>
+            <ul class="task-list">
+                <li><strong>&#10148; OGGI</strong></li>
+                <li class="task-conteiner">
+                    <span class="check">&check;</span>
+                    <span class="done">Recruting blog post</span>
+                    <span class="tag blu">Editorial</span>
+                </li>
+                <li class="task-conteiner">
+                    <span class="check ">&check;</span>
+                    <span class="done">Mobile app luanch</span>
+                    <span class="tag purple">Q1 Goals</span>
+                </li>
+                <li class="task-conteiner">
+                    <span class="cross">&cross;</span>
+                    <span>Interview John H.</span>
+                    <span class="tag green">Recruting</span>
+                </li>
+                <li class="task-conteiner">
+                    <span class="check ">&check;</span>
+                    <span class="done">Summit update to mobile storefronts</span>
+                    <span class="tag orange">Mobile</span>
+                </li>
+            </ul>
+            <ul class="task-list">
+                <li><strong>&#10148; PROSSIMI GIORNI</strong></li>
+                <li class="task-conteiner">
+                    <span class="cross">&cross;</span>
+                    <span>Schedule meeting with Alex</span>
+                </li>
+                <li class="task-conteiner">
+                    <span class="check ">&check;</span>
+                    <span class="done">Homepage refresh</span>
+                    <span class="tag pink">Website</span>
+                </li>
+                <li class="task-conteiner">
+                    <span class="check ">&check;</span>
+                    <span class="done">Onboard new sales team members</span>
+                    <span class="tag green2">Sales</span>
+                </li>
+                <li class="task-conteiner">
+                    <span class="check">&check;</span>
+                    <span class="done">Review editorial calendar</span>
+                    <span class="tag blu">Editorial</span>
+                </li>
+            </ul>
+            <!--/list -->
+        </main>
+        <!-- /main -->
+    </div>
+        
+        <!-- script -->
+        <script src="./js/script.js"></script>
+        <!-- /script -->
+    </body>
+
+</html>
